@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uzum Market — 11.11 Katta Savdo | Internet-do‘kon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Kirish animatsiyasi (Splash Preloader) -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__glow"></div>
+    <div class="preloader__box">
+      <div class="preloader__logo">
+        <span class="preloader__badge">U</span>
+        <span class="preloader__brand">uzum market</span>
+      </div>
+      <div class="preloader__1111">11.11 KATTA SAVDO</div>
+      <div class="preloader__bar">
+        <div class="preloader__bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11.11 Yuqori Aksiya Lentasi -->
+  <div class="sale-ribbon">
+    <div class="container sale-ribbon__inner">
+      <span class="sale-ribbon__tag">11.11</span>
+      <span class="sale-ribbon__text">Katta chegirmalar va 0-0-12 bo‘lib to‘lash boshlandi!</span>
+      <span class="sale-ribbon__timer" id="saleCountdown">11:11:11</span>
+    </div>
+  </div>
+
+  <!-- Yuqori yordamchi panel -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <div class="top-bar__left">
+        <span class="top-bar__city"><i class="fa-solid fa-location-dot"></i> Shahar: <strong>Toshkent</strong></span>
+        <a href="#catalog-section" class="top-bar__link">Topshirish punktlari</a>
+      </div>
+      <div class="top-bar__right">
+        <span class="top-bar__promo">Uzum kartasi bilan — qo‘shimcha 11% foyda</span>
+        <a href="#footer" class="top-bar__link">Savol-javoblar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asosiy Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo" id="logoBtn" aria-label="Uzum Market bosh sahifa">
+        <span class="logo__badge">U</span>
+        <span class="logo__text">uzum market</span>
+        <span class="logo__1111">11.11</span>
+      </a>
+
+      <button type="button" class="catalog-btn" id="catalogToggleBtn" aria-expanded="false">
+        <span class="catalog-btn__bars">
+          <span></span><span></span><span></span>
+        </span>
+        <span>Katalog</span>
+      </button>
+
+      <form class="search-box" id="searchForm" role="search">
+        <input
+          type="search"
+          id="searchInput"
+          class="search-box__input"
+          placeholder="700+ mahsulot orasidan izlash (11.11 narxlar)"
+          autocomplete="off"
+        />
+        <button type="button" class="search-box__clear" id="clearSearchBtn" title="Tozalash" aria-label="Qidiruvni tozalash">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button type="submit" class="search-box__submit" aria-label="Qidirish">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <nav class="header-actions" aria-label="Foydalanuvchi menyusi">
+        <button type="button" class="header-action" id="authOpenBtn">
+          <i class="fa-regular fa-user"></i>
+          <span id="authLabel">Kirish</span>
+        </button>
+
+        <button type="button" class="header-action" id="favoritesOpenBtn">
+          <i class="fa-regular fa-heart"></i>
+          <span>Saralangan</span>
+          <span class="header-action__badge" id="favoritesCount">0</span>
+        </button>
+
+        <button type="button" class="header-action header-action--cart" id="cartOpenBtn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Savat</span>
+          <span class="header-action__badge header-action__badge--purple" id="cartCount">0</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Katalog ochiladigan menyusi -->
+    <div class="catalog-dropdown" id="catalogDropdown">
+      <div class="container catalog-dropdown__inner">
+        <div class="catalog-dropdown__sidebar" id="catalogSidebar"></div>
+        <div class="catalog-dropdown__content" id="catalogContent"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigatsiya kategoriyalari -->
+  <nav class="category-nav" aria-label="Mahsulot kategoriyalari">
+    <div class="container category-nav__inner" id="categoryNavList"></div>
+  </nav>
+
+  <main class="main">
+    <!-- 11.11 Banner Slider -->
+    <section class="hero container" aria-label="11.11 Reklama bannerlari">
+      <div class="slider" id="heroSlider">
+        <div class="slider__track" id="sliderTrack"></div>
+        <button type="button" class="slider__arrow slider__arrow--prev" id="prevSlideBtn" aria-label="Oldingi banner">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="slider__arrow slider__arrow--next" id="nextSlideBtn" aria-label="Keyingi banner">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="slider__dots" id="sliderDots" role="tablist" aria-label="Banner sahifalari"></div>
+      </div>
+
+      <!-- Tezkor 11.11 bo'limlar -->
+      <div class="quick-strip">
+        <button type="button" class="quick-pill" data-quick="1111">
+          <span class="quick-pill__icon"><i class="fa-solid fa-crown"></i></span>
+          <span>11.11 Super Xit</span>
+        </button>
+        <button type="button" class="quick-pill" data-quick="discounts">
+          <span class="quick-pill__icon"><i class="fa-solid fa-percent"></i></span>
+          <span>Chegirmalar</span>
+        </button>
+        <button type="button" class="quick-pill" data-quick="promotions">
+          <span class="quick-pill__icon"><i class="fa-solid fa-bolt"></i></span>
+          <span>Aksiyalar</span>
+        </button>
+        <button type="button" class="quick-pill" data-quick="popular">
+          <span class="quick-pill__icon"><i class="fa-solid fa-fire"></i></span>
+          <span>Mashhur bo‘limlar</span>
+        </button>
+        <button type="button" class="quick-pill" data-quick="favorites">
+          <span class="quick-pill__icon"><i class="fa-regular fa-heart"></i></span>
+          <span>Sevimlilarim</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Mahsulotlar bo'limi -->
+    <section class="products-section container" id="catalog-section">
+      <div class="section-header">
+        <div>
+          <h1 class="section-title" id="sectionTitle">11.11 Barcha mahsulotlar</h1>
+          <p class="section-subtitle" id="sectionSubtitle">Har bir bo‘limda 100 tadan mahsulot</p>
+        </div>
+
+        <div class="sort-box">
+          <label for="sortSelect" class="sort-box__label">Saralash:</label>
+          <select id="sortSelect" class="sort-box__select">
+            <option value="default">11.11 Mashhur</option>
+            <option value="price-asc">Arzonroq (narx o‘sishi)</option>
+            <option value="price-desc">Qimmatroq (narx kamayishi)</option>
+            <option value="discount-desc">Katta chegirma</option>
+            <option value="rating-desc">Yuqori reyting</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+
+      <!-- Sahifalash (Pagination) -->
+      <nav class="pagination" id="pagination" aria-label="Sahifalar navigatsiyasi"></nav>
+
+      <div class="empty-state hidden" id="emptyState">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>Mahsulotlar topilmadi</h3>
+        <p>Qidiruv so‘zini o‘zgartiring yoki boshqa kategoriyani tanlang.</p>
+        <button type="button" class="btn btn--primary" id="resetFiltersBtn">Filtrlarni tozalash</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container footer__grid">
+      <div>
+        <h4 class="footer__title">Biz haqimizda</h4>
+        <ul class="footer__list">
+          <li><a href="#catalog-section">Topshirish punktlari</a></li>
+          <li><a href="#catalog-section">Vakansiyalar</a></li>
+          <li><a href="#catalog-section">Hamkorlik dasturi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Foydalanuvchilarga</h4>
+        <ul class="footer__list">
+          <li><a href="#catalog-section">Biz bilan bog‘lanish</a></li>
+          <li><a href="#catalog-section">Yetkazib berish usullari</a></li>
+          <li><a href="#catalog-section">Tovarni qaytarish</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Tadbirkorlarga</h4>
+        <ul class="footer__list">
+          <li><a href="#catalog-section">Uzumda soting</a></li>
+          <li><a href="#catalog-section">Sotuvchi kabineti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Uzum ijtimoiy tarmoqlarda</h4>
+        <div class="footer__socials">
+          <a href="#top" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#top" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#top" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#top" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Uzum Market · 11.11 Katta Savdo. Barcha huquqlar himoyalangan.</span>
+      <span>Maxfiylik kelishuvi · Foydalanuvchi kelishuvi</span>
+    </div>
+  </footer>
+
+  <!-- Mahsulot tafsilotlari modal oynasi -->
+  <div class="modal-backdrop hidden" id="productModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal modal--product">
+      <button type="button" class="modal__close" id="closeProductModal" aria-label="Yopish">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="product-modal__body" id="productModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Savat / Saralanganlar / Kirish yon paneli -->
+  <div class="drawer-backdrop hidden" id="drawerBackdrop">
+    <aside class="drawer" id="drawerPanel" aria-label="Yon panel">
+      <div class="drawer__header">
+        <h2 class="drawer__title" id="drawerTitle">Savat</h2>
+        <button type="button" class="icon-btn" id="closeDrawerBtn" aria-label="Yopish">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="drawer__body" id="drawerBody"></div>
+      <div class="drawer__footer hidden" id="drawerFooter"></div>
+    </aside>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
